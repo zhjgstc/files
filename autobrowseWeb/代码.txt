@@ -1,0 +1,16 @@
+下载文件内没有jquery请自行添加。
+
+$("#section_data").autobrowse({
+            url: function (offset) {
+                return 'www.julysoft.cn?offset=' + offset;
+            },
+            template: function (response) {
+                $("#div_footer_loader").hide();
+            },
+            itemsReturned: function (response) { return response.data.length; },
+            offset: 0,
+            max: 100000000,
+            loader: '<div class="loader" id="div_footer_loader" style="text-align:center;line-height:25px;margin-bottom:25px;height:35px;">滑动查看更多，正在加载中...</div>',
+            useCache: false,
+            expiration: 1
+        });
